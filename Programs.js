@@ -104,3 +104,30 @@ const startTimer = (count) => {
   }, 1000);
 };
 startTimer(5);
+
+// Extra program - find frequency of letters
+
+const wordArray = [
+  "apple",
+  "Banana",
+  "Cherry",
+  "date",
+  "Grape",
+  "Kiwi",
+  "Lemon",
+  "orange",
+  "Pear",
+  "watermelon",
+];
+
+const frequencies = wordArray.reduce((freq, letter) => {
+  for (let c of letter) {
+    if (freq[c.toLowerCase()]) {
+      freq[c.toLowerCase()]++;
+    } else {
+      freq[c.toLowerCase()] = 1;
+    }
+  }
+  return freq;
+}, {});
+console.log("Frequencies: ", frequencies);
