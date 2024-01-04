@@ -21,7 +21,6 @@ const sorted = arr.sort((a, b) => a - b);
 console.log(sorted);
 
 console.log(arr.reverse());
-
 console.log(arr.join(" "));
 
 const sumArr = arr.reduce((acc, curr) => acc + curr);

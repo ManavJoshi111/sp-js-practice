@@ -16,4 +16,8 @@ console.log(
 );
 console.log(p1 instanceof Person);
 console.log("prototype of p1: ", Object.getPrototypeOf(p1));
-console.log(p1.__proto__ === Person.prototype);
+console.log(p1.__proto__ === Person.prototype); // true
+
+// p1.__proto__=Person
+// p1.__proto__.__proto__=Object
+// p1.__proto__.__proto__.__proto__=null
