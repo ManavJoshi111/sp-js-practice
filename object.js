@@ -45,7 +45,7 @@ console.log(Object.getOwnPropertyNames(target));
 console.log(Object.getOwnPropertySymbols(target));
 console.log(Object.getPrototypeOf(target));
 console.log(Object.is(target, t1));
-console.log(Object.is({}, []));
+console.log(Object.is([], []));
 console.log(Object.isFrozen(target));
 console.log(Object.isSealed(target));
 
