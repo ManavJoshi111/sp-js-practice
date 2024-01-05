@@ -253,8 +253,27 @@ if (input7.search(/^(yes)|(y)/) === 0) {
   console.log("None of them");
 }
 
-createTitle("Program 8 remaining");
+createTitle("Program 8");
 // // Write a program to get a sorted array of objects ordered by properties and orders.
+const input8 = [
+  { name: "fred", age: 48 },
+  { name: "barney", age: 36 },
+  { name: "fred", age: 40 },
+];
+
+const orderedBy = ["name", "age"];
+const orders = ["asc", "desc"];
+
+input8.sort((a, b) => {
+  for (let i in orderedBy) {
+    const key = orderedBy[i];
+    const sign = orders[i] === "asc" ? 1 : -1;
+    if (a[key] > b[key]) return sign * 1;
+    if (a[key] < b[key]) return sign * -1;
+  }
+  return 0;
+});
+console.log("Result of 8:", input8);
 
 createTitle("Program 9");
 // write a program to remove the key-value pairs from the given object
