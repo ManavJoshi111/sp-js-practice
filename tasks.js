@@ -82,3 +82,69 @@ nestedObject.addCountry({
   population: 67961439,
 });
 console.log("Countries: ", nestedObject.data.continents.europe);
+
+// 09-01-2024
+// 1.
+let arr1 = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
+// Find the frequency of the most occurred element in the array
+// input : arr1
+// output : a '5 times'
+const findFreq = (arr, freqMap) => {
+  for (let e of arr) {
+    freqMap[e] ? freqMap[e]++ : (freqMap[e] = 1);
+  }
+};
+let freq = 0,
+  mostoccurred;
+let freqMap = {};
+findFreq(arr1, freqMap);
+for (let i in freqMap) {
+  if (freqMap[i] > freq) {
+    freq = freqMap[i];
+    mostoccurred = i;
+  }
+}
+console.log("Answer of 1");
+console.log(mostoccurred, freqMap[mostoccurred], "times");
+
+console.log("1, USING MAP");
+const map = new Map();
+arr1.forEach((ele) => {
+  map.set(ele, map[ele] === undefined ? 1 : map[ele]++);
+});
+mostoccurred = undefined;
+let freqOfMostOccurred = 0;
+map.forEach((ele, freq) => {
+  console.log("ele: ", ele);
+  console.log("freq: ", freq);
+});
+
+// 2. Write a JavaScript program to find the largest element in a nested array.
+// input : [[1,5],[[3,4,6],[8]],[0,7]]
+// output : 8
+
+// 3. Given two strings, return true if they are anagrams of one another (ignore case)
+// example: "pools" is an anagram of "loops", "Mary" is an anagram of "Army"
+// input1: "Hello"
+// input2: "Holla"
+// output: false
+
+// 4. Given an array containing numbers from 1 to N, with one number missing, find the missing number.
+// input: [1,2,4,5]
+// output: 3
+
+// 5. Will the below code return any error? If yes, identify the error.
+function fetchData(callback) {
+  fetch("https://api.example.com/data")
+    .then((response) => response.json())
+    .then((data) => callback(null, data))
+    .catch((error) => callback(error));
+}
+
+fetchData(function (error, data) {
+  if (error) {
+    console.log("Error:", error);
+  } else {
+    console.log("Data:", data);
+  }
+});
