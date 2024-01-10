@@ -187,3 +187,32 @@ db.sales.aggregate([
     },
   },
 ]);
+
+// Retrieve the orders where the total revenue is greater than $100 Display only the customer, order_id, and the total revenue.
+db.sales.aggregate([
+  {
+    $unwind: "$items",
+  },
+  {
+    $group: {
+      _id: "$order_id",
+      TotalRevenue: {
+        $sum: { $multiply: ["$items.quantity", "$items.price"] },
+      },
+    },
+  },
+  {
+    $match: {
+      TotalRevenue: {
+        $gt: 100,
+      },
+    },
+  },
+  {
+    $project: {
+      order_id: 1,
+      TotalRevenue: 1,
+      _id: 0,
+    },
+  },
+]);

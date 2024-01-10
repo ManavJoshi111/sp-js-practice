@@ -38,7 +38,7 @@ db.cities.createIndex({ "2dsphere": 1 });
 // find the closest cities using the $near operator
 /*
 Here we are providing the coords of Vadodara [73.1812, 22.3072], hence it will return the result in the following order:
-Ahmedabad, Gandhinagar, Himatnagar & Idar
+Ahmedabad, Gandhinagar, Himmatnagar & Idar
  */
 db.cities.find({
   location: {
@@ -53,7 +53,7 @@ db.cities.find({
 
 /*
 Here we are providing the coords of Khedbrahma [73.041389,24.028334], hence it will return the result in the following order:
-Ahmedabad, Gandhinagar, Himatnagar & Idar
+Idar, Himmatnagar, Gandhinagar & Ahmedabad
 */
 
 db.cities.find({
