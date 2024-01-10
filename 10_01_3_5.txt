@@ -1,0 +1,19 @@
+Let's have an example of employees of a large company. The employee collection must be having a huge amount of data. 
+
+Question 3: 
+Suppose you have a MongoDB cluster with sharding enabled, and you want to shard a collection based on a specific field. Explain the considerations and steps involved in sharding a collection to achieve optimal performance.
+Answer:
+    - We can use the department of the employee as the shard key. Because the department is something which can evenly distribute the data across all the shards to be created.
+    - MongoDB doesn't have any mechanism to unshard a collection. Hence, we must be sure about the shard key and the decision of sharding
+    - 
+Steps: we can perform steps like enabling sharding, creating a shard key, creating index on a shard key to maximize the performance, add shard to the cluster etc.
+
+
+Question 5:
+Consider a collection with a large number of documents and a query that filters based on a specific field. Explain how you would use indexing to optimize the query performance.
+
+Answer:
+Now, the HR department often needs to find the information about the employees. Hence, we can create an index on the employee collection to optimize the query performance.
+In another scenario, the HR department needs to find the information about the employees who are working in a particular department. In this case, we can create an index on the department field of the employee collection to optimize the query performance.
+
+Now, whenever the HR person will query the database to find the data about the employee or the employees working in a specific department, MongoDB needs not to scan the whole collection. Instead, the indexes will be used to find the required data. 
